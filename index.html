@@ -9,13 +9,25 @@
        min-height: 12px;
      }
     </style>
+    <script>
+      const divs = document.querySelectorAll('div');
+ 
+function bubble(e) {
+e.stopPropagation();
+ 
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+}
+ 
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble);
+}
+    </script>
   </head>
-
   <body>
-    <main id="main">My ID is "main"!</main>
-
+    <main id="main">My ID is "main"!
+  </main>
     <br />
-
+   
     <div>
       <label>Input:</label><input />
     </div>
@@ -37,5 +49,7 @@
         </div>
       </div>
     </div>
+    
   </body>
+  
 </html>
